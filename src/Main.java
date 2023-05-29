@@ -43,9 +43,9 @@ public class Main {
     {   System.out.println("Задача 3");
         int year = ThreadLocalRandom.current().nextInt(4, 200 + 1);
         if (year%4==0){
-            if ((year%100)==0) {
+            if (year%100==0) {
                 System.out.println(year + " год не является високосным");
-            } else if ((year%400)==0) {
+            } else if (year%400==0) {
                 System.out.println(year + " год является високосным");
             } else { System.out.println(year + " год является високосным");}
             } else {   System.out.println(year + " год не является високосным");
