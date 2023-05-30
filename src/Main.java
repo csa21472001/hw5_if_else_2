@@ -21,20 +21,23 @@ public class Main {
             case 1:
                 System.out.println("Установите версию приложения для Android по ссылке");
         }
+
     }
 
     public static void task2() {
         System.out.println("Задача 2");
+        int clientOS = ThreadLocalRandom.current().nextInt(0, 3 + 1);
+        int clientYear = ThreadLocalRandom.current().nextInt(0, 2023 + 1);
         int iOS = 0;
         int android = 1;
         int checkYear = 2015;
-        if (iOS == 0 && checkYear >= 2015) {
+        if (iOS == clientOS && checkYear <= clientYear) {
             System.out.println("Установите версию приложения для iOS по ссылке");
-        } else if (android == 1 && checkYear >= 2015) {
+        } else if (android == clientOS && checkYear <= clientYear) {
             System.out.println("Установите версию приложения для Android по ссылке");
-        } else if (iOS == 0 && checkYear < 2015) {
+        } else if (iOS == clientOS && checkYear > clientYear) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        } else if (android == 1 && checkYear < 2015) {
+        } else if (android == clientOS && checkYear > clientYear) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
         } else {
             System.out.println("Сейчас мы предложим версию под андроид");
@@ -58,9 +61,9 @@ public class Main {
         if (deliveryDistance <= 20) {
             System.out.println("Доставка потребует " + deliveryDays + " день/дня ");
         } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
-            System.out.println("Доставка потребует " + deliveryDays + 1 + " день/дня ");
+            System.out.println("Доставка потребует " + (deliveryDays + 1) + " день/дня ");
         } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
-            System.out.println("Доставка потребует " + deliveryDays + 2 + " день/дня ");
+            System.out.println("Доставка потребует " + (deliveryDays + 2) + " день/дня ");
         } else {
             System.out.println("Свыше 100 км доставки нет.");
         }
