@@ -4,28 +4,102 @@ import java.util.concurrent.ThreadLocalRandom;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.println("Hello and welcome!");
-
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        task1();
+        task2();
+        task3();
+        task4();
+        task5();
     }
-    public static void task6()
-    {   System.out.println("Задача 6");
-        //int age = (int) Math.floor(Math.random());
-        int passenger = ThreadLocalRandom.current().nextInt(0,  150 + 1);
-        if (passenger>0 && passenger<=60 ) {
-            System.out.println("Вы счастливый пассажир номер "+passenger+" для вас есть сидячее место");
-        } else if (passenger>60&&passenger<=102){
-            System.out.println("Вы пассажир номер "+passenger+" для вас есть стоячее место");
+
+    public static void task1() {
+        System.out.println("Задача 1");
+        int clientOS = 1;
+        switch (clientOS) {
+            case 0:
+                System.out.println("Установите версию приложения для IOS по ссылке");
+                break;
+            case 1:
+                System.out.println("Установите версию приложения для Android по ссылке");
+        }
+
+    }
+
+    public static void task2() {
+        System.out.println("Задача 2");
+        int clientOS = ThreadLocalRandom.current().nextInt(0, 3 + 1);
+        int clientYear = ThreadLocalRandom.current().nextInt(0, 2023 + 1);
+        int iOS = 0;
+        int android = 1;
+        int checkYear = 2015;
+        if (iOS == clientOS && checkYear <= clientYear) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else if (android == clientOS && checkYear <= clientYear) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        } else if (iOS == clientOS && checkYear > clientYear) {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        } else if (android == clientOS && checkYear > clientYear) {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
         } else {
-            System.out.println("Мест нет. Пожалуйста покиньте вагон");
+            System.out.println("Сейчас мы предложим версию под андроид");
         }
     }
+
+    public static void task3() {
+        System.out.println("Задача 3");
+        int year = ThreadLocalRandom.current().nextInt(4, 2023 + 1);
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            System.out.println(year + " год  является високосным");
+        } else {
+            System.out.println(year + " год не является високосным");
+        }
+    }
+
+    public static void task4() {
+        System.out.println("Задача 4");
+        int deliveryDistance = ThreadLocalRandom.current().nextInt(1, 120 + 1);
+        int deliveryDays = 1;
+        if (deliveryDistance <= 20) {
+            System.out.println("Доставка потребует " + deliveryDays + " день/дня ");
+        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+            System.out.println("Доставка потребует " + (deliveryDays + 1) + " день/дня ");
+        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
+            System.out.println("Доставка потребует " + (deliveryDays + 2) + " день/дня ");
+        } else {
+            System.out.println("Свыше 100 км доставки нет.");
+        }
+    }
+
+    public static void task5() {
+        System.out.println("Задача 5");
+        int monthNumber = ThreadLocalRandom.current().nextInt(1, 20 + 1);
+        switch (monthNumber) {
+            case 1:
+            case 2:
+                System.out.println(" Зима." + monthNumber);
+                break;
+            case 3:
+            case 4:
+            case 5:
+                System.out.println(" Весна." + monthNumber);
+                break;
+            case 6:
+            case 7:
+            case 8:
+                System.out.println(" Лето." + monthNumber);
+                break;
+            case 9:
+            case 10:
+            case 11:
+                System.out.println(" Осень." + monthNumber);
+                break;
+            case 12:
+                System.out.println(" Зима." + monthNumber);
+                break;
+            default:
+                System.out.println("Ошибка. Нет такого месяца.");
+                break;
+        }
+    }
+
 }
+
